@@ -59,3 +59,9 @@ footer {
     background-color: #333;
     color: white;
 }
+
+img {
+    border-radius: 8px; /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    margin: 10px 0; /* 위아래 여백 */
+}
