@@ -1,137 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고호찬 | 포트폴리오</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>고호찬 | 포트폴리오</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="header-content">
-            <h1>개발 포트폴리오</h1>
+  <!-- 사이드(도킹 전엔 중앙) 탭 네비게이션 -->
+  <nav id="nav" aria-label="Primary">
+    <button class="nav-btn active" data-target="profile" aria-pressed="true">프로필</button>
+    <button class="nav-btn" data-target="projects" aria-pressed="false">프로젝트</button>
+    <button class="nav-btn" data-target="awards" aria-pressed="false">수상 및 수료</button>
+  </nav>
+
+  <!-- 메인 컨텐츠 -->
+  <main id="content">
+    <!-- 프로필(이력서 스타일) -->
+    <section id="profile" class="panel visible" aria-labelledby="프로필">
+      <header class="resume-header">
+        <div class="avatar">
+          <img src="https://hhcczz.github.io/BTOrrange.github.io/Mylmg.jpg" alt="프로필 사진">
         </div>
-    </header>
-
-    <section id="about">
-        <h2>간단한 자기소개</h2>
-        <p>이름 : 고호찬</p>
-        <p>나이 : 26</p>
-        <p>사용 언어 : C, C#, python</p>
-        <p>프로그램 개발: 1개, 게임 개발 : 3개</p>
-    </section>
-    
-    <section id="certifications">
-        <h2>수료 과정 및 인증서</h2>
-        <div class="certification">
-            <h3>디지털 신기술 교육과정</h3>
-            <p>교육 시간 : 160H</p>
-            <p>주체 : 부산정보산업진흥원</p>
-            <p>설명: 2024년 Python을 활용한 인공지능 AI 학습 및 개발</p>
-            <img src="https://github.com/user-attachments/assets/d4f8914a-eb93-4552-b71d-65662e145808" alt="인증서" width="30%">
-       </div>
-    </section>
-
-    <section id="Rewards">
-        <h2>수상</h2>
-        <div class="Rewards">
-            <h3>Github 쇼케이스 경진대회</h3>
-            <p>주체 : 동서대학교 SW중심대학사업단</p>
-            <p>기간 : 2024-04-01 ~ 2024-11-11</p>
-            <p>설명: Github를 활용해 프로젝트 관리</p>
-            <img src="https://github.com/user-attachments/assets/5122938a-cb8c-43f8-b529-80c1e60ec8dc" alt="인증서" width="30%">
-            <div class="pdf-link">
-                <a href="https://github.com/user-attachments/files/18388991/Github.pdf" target="_blank">Download PDF</a>
-            </div>
+        <div>
+          <h1>고호찬</h1>
+          <p class="subtitle">게임/소프트웨어 개발자 · C / C# / Python</p>
+          <div class="meta">
+            <a href="mailto:qimin5012@naver.com">qimin5012@naver.com</a>
+            <span class="dot">•</span>
+            <a href="https://github.com/hhcczz" target="_blank" rel="noreferrer">github.com/hhcczz</a>
+          </div>
         </div>
+      </header>
+
+      <div class="resume-grid">
+        <section>
+          <h2>소개</h2>
+          <ul class="kv">
+            <li><span>이름</span><b>고호찬</b></li>
+            <li><span>나이</span><b>26</b></li>
+            <li><span>사용 언어</span><b>C, C#, Python</b></li>
+            <li><span>개발 이력</span><b>프로그램 1개 · 게임 3개</b></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>스킬</h2>
+          <div class="chips">
+            <span>Unity 2D</span><span>C#</span><span>C</span>
+            <span>Python</span><span>Vanilla JS</span><span>HTML5/CSS3</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>프로젝트 하이라이트</h2>
+          <ul class="list">
+            <li><b>나만의 용사 키우기</b> · Unity 2D · Android · 1인 개발</li>
+            <li><b>개구리 모험</b> · Unity 2D · Android · 점프 액션</li>
+            <li><b>국기 맞추기 게임</b> · HTML/CSS/JS · Web</li>
+            <li><b>주식 보고서 프로그램</b> · Python 3.12 · Windows</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>연락처</h2>
+          <p>협업/문의는 이메일로 편하게 연락 주세요.</p>
+          <a class="btn-ghost" href="mailto:qimin5012@naver.com">이메일 보내기</a>
+        </section>
+      </div>
     </section>
 
-    <section id="projects">
-        <h2>게임 프로젝트</h2>
-        <div class="project"><h3>🛡️ 나만의 용사 키우기</h3>
-            <p><strong>설명:</strong> 용사를 성장시켜 최종 마왕을 물리치면 클리어되는 방치형 RPG 게임입니다.</p>
-            <p><strong>언어:</strong> C#</p>
-            <p><strong>개발 환경:</strong> Unity Engine 2D</p>
-            <p><strong>플랫폼:</strong> Mobile (Android)</p>
-            <p><strong>장르:</strong> 방치형 RPG</p>
-            <p><strong>개발 인원:</strong> 1명</p>
-            <div style="text-align: center;">
-                <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/84ceb5ed-053f-45bf-9dad-1d3dc638b050" width="19%" height="20%"/>
-                <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/f745a0d2-69ed-4770-8275-a5b22c4e103c" width="19%" height="20%"/>
-                <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/1fd88a07-4683-40ef-92b9-0208a55be075" width="19%" height="20%"/>
-                <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/3a589a00-d3ac-4fc3-afce-d7430ee658a8" width="19%" height="20%"/>
-                <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/7aaf8433-ac93-4c27-8963-664944501fbd" width="19%" height="20%"/>
-                <p>게임 플레이 사진</p>
-                <a href="https://github.com/hhcczz/Idle-Game" target="_blank">View on GitHub</a>
-            </div>
-            <hr class="styled-hr">
-            <h3>🍓 개구리 모험</h3>
-            <p><strong>설명:</strong> 다양한 개구리 캐릭터를 조작해 나쁜 동물들이 훔쳐간 다섯 가지 과일을 되찾는 점프 액션 게임입니다.</p>
-            <p><strong>언어:</strong> C#</p>
-            <p><strong>개발 환경:</strong> Unity Engine 2D</p>
-            <p><strong>플랫폼:</strong> Mobile (Android)</p>
-            <p><strong>장르:</strong> Jumping Action</p>
-            <p><strong>개발 인원:</strong> 1명</p>
-            <div style="text-align: center;">
-                <img src="https://github.com/user-attachments/assets/03329ac3-e817-4511-abed-56c021b4a784" width="33%" height="33%"/>
-                <img src="https://github.com/user-attachments/assets/460d680c-6b66-4d04-a248-cd3210d8e568" width="33%" height="33%"/>
-                <img src="https://github.com/user-attachments/assets/e9e88da0-2866-4ea3-af74-d54de46ff4c4" width="33%" height="33%"/>
-                <img src="https://github.com/user-attachments/assets/692caa8e-17f8-41e4-8577-924703c8c64e" width="33%" height="33%"/>
-                <img src="https://github.com/user-attachments/assets/d9c9938d-c92e-4dad-8147-24b93c3405f4" width="33%" height="33%"/>
-                <img src="https://github.com/user-attachments/assets/c6a975a5-54ef-497f-abc1-2429817df373" width="33%" height="33%"/>
-                <p>게임 플레이 사진</p>
-                <a href="https://github.com/hhcczz/JumpGame" target="_blank">View on GitHub</a>
-            </div>
-            <hr class="styled-hr">
-            <h3>🌍 국기 맞추기 게임</h3>
-            <p><strong>설명:</strong> 난이도별로 제시되는 전 세계의 다양한 국기를 맞히는 퀴즈 게임입니다.</p>
-            <p><strong>언어:</strong> HTML5, CSS3, JavaScript (Vanilla JS)</p>
-            <p><strong>에디터:</strong> Visual Studio Code</p>
-            <p><strong>플랫폼:</strong> Web Browser (Chrome, Edge 등)</p>
-            <p><strong>장르:</strong> Quiz Game / Educational</p>
-            <p><strong>개발 인원:</strong> 1명</p>
-            <div style="text-align: center;">
-                <img src="https://github.com/user-attachments/assets/4f8c9e31-a145-44cd-9467-5ccf6c0716b7" width="30%" height="30%"/>
-                <img src="https://github.com/user-attachments/assets/77ab811b-80ca-4486-bd91-d638c360accd" width="30%" height="30%"/>
-                <img src="https://github.com/user-attachments/assets/91be3e05-5eeb-469b-b883-a1a36c1410b3" width="30%" height="30%"/>
-                <p>게임 플레이 사진</p>
-                <a href="https://github.com/hhcczz/WebHosting.github.io" target="_blank">View on GitHub</a>
-            </div>
-            <br>
+    <!-- 프로젝트 -->
+    <section id="projects" class="panel" aria-labelledby="프로젝트">
+      <h1>프로젝트</h1>
+
+      <article class="card">
+        <h3>🛡️ 나만의 용사 키우기</h3>
+        <p><b>설명:</b> 용사를 성장시켜 최종 마왕을 물리치면 클리어되는 방치형 RPG.</p>
+        <p><b>언어/환경:</b> C# · Unity 2D · Mobile(Android) · 1인 개발</p>
+        <div class="gallery">
+          <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/84ceb5ed-053f-45bf-9dad-1d3dc638b050" alt="">
+          <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/f745a0d2-69ed-4770-8275-a5b22c4e103c" alt="">
+          <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/1fd88a07-4683-40ef-92b9-0208a55be075" alt="">
+          <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/3a589a00-d3ac-4fc3-afce-d7430ee658a8" alt="">
+          <!--<img src="https://github.com/hhcczz/Idle-Game/assets/101077489/7aaf8433-ac93-4c27-8963-664944501fbd" alt=""> -->
         </div>
-        <h2>소프트웨어 프로젝트</h2>
-        <div class="project">
-            <h3>📈 주식 보고서 프로그램</h3>
-            <p><strong>설명:</strong> Toss API에서 주식 데이터를 받아와 정보를 출력해주는 데스크탑 프로그램입니다.</p>
-            <p><strong>개발 환경:</strong> Python 3.12.4 (Anaconda base 환경)</p>
-            <p><strong>플랫폼:</strong> Windows PC</p>
-            <p><strong>개발 인원:</strong> 2명</p>
-            <div style="text-align: center;">
-                <img src="https://github.com/user-attachments/assets/99f28e47-57e6-4058-9a39-bb0c340e547b" width="30%" height="100%"/>
-                <img src="https://github.com/user-attachments/assets/4727a4f6-02ae-4a4c-8856-f841bd449340" width="30%" height="100%"/>
-                <img src="https://github.com/user-attachments/assets/50c53025-0d83-4469-a92e-4c1261dfb794" width="30%" height="100%"/>
-                <p>프로그램 사진</p>
-                <a href="https://github.com/hhcczz/StockReport" target="_blank">View on GitHub</a>
-            </div>
+        <a class="btn-link" href="https://github.com/hhcczz/Idle-Game" target="_blank" rel="noreferrer">GitHub 보기</a>
+      </article>
+
+      <article class="card frog">
+        <h3>🍓 개구리 모험</h3>
+        <p><b>설명:</b> 다양한 개구리를 조작해 훔쳐간 과일을 되찾는 점프 액션.</p>
+        <p><b>언어/환경:</b> C# · Unity 2D · Mobile(Android) · 1인 개발</p>
+        <div class="gallery">
+          <img src="https://github.com/user-attachments/assets/03329ac3-e817-4511-abed-56c021b4a784" alt="">
+          <img src="https://github.com/user-attachments/assets/460d680c-6b66-4d04-a248-cd3210d8e568" alt="">
+          <img src="https://github.com/user-attachments/assets/e9e88da0-2866-4ea3-af74-d54de46ff4c4" alt="">
+          <img src="https://github.com/user-attachments/assets/692caa8e-17f8-41e4-8577-924703c8c64e" alt="">
+          <img src="https://github.com/user-attachments/assets/d9c9938d-c92e-4dad-8147-24b93c3405f4" alt="">
+          <img src="https://github.com/user-attachments/assets/c6a975a5-54ef-497f-abc1-2429817df373" alt="">
         </div>
+        <a class="btn-link" href="https://github.com/hhcczz/JumpGame" target="_blank" rel="noreferrer">GitHub 보기</a>
+      </article>
+
+      <article class="card">
+        <h3>🌍 국기 맞추기 게임</h3>
+        <p><b>설명:</b> 난이도별 전 세계 국기를 맞히는 퀴즈 게임.</p>
+        <p><b>언어/환경:</b> HTML5 · CSS3 · JavaScript · Web</p>
+        <div class="gallery">
+          <img src="https://github.com/user-attachments/assets/4f8c9e31-a145-44cd-9467-5ccf6c0716b7" alt="">
+          <img src="https://github.com/user-attachments/assets/77ab811b-80ca-4486-bd91-d638c360accd" alt="">
+          <img src="https://github.com/user-attachments/assets/91be3e05-5eeb-469b-b883-a1a36c1410b3" alt="">
+        </div>
+        <a class="btn-link" href="https://github.com/hhcczz/WebHosting.github.io" target="_blank" rel="noreferrer">GitHub 보기</a>
+      </article>
+
+      <article class="card">
+        <h3>📈 주식 보고서 프로그램</h3>
+        <p><b>설명:</b> (개인) API로 받은 주식 데이터를 보고서 형태로 보여주는 Windows 앱.</p>
+        <p><b>환경:</b> Python 3.12.4 (Anaconda base) · Windows · 2인</p>
+        <div class="gallery">
+          <img src="https://github.com/user-attachments/assets/99f28e47-57e6-4058-9a39-bb0c340e547b" alt="">
+          <img src="https://github.com/user-attachments/assets/4727a4f6-02ae-4a4c-8856-f841bd449340" alt="">
+          <img src="https://github.com/user-attachments/assets/50c53025-0d83-4469-a92e-4c1261dfb794" alt="">
+        </div>
+        <a class="btn-link" href="https://github.com/hhcczz/StockReport" target="_blank" rel="noreferrer">GitHub 보기</a>
+      </article>
     </section>
 
-    <section id="contact">
-        <h2>연락처</h2>
-        <p>협업이나 질문이 있으시면 언제든지 연락해주세요.</p>
-        <p>Email: <a href="mailto:qimin5012@naver.com">qimin5012@naver.com</a></p>
-    </section>
+    <!-- 수상 및 수료 -->
+    <section id="awards" class="panel" aria-labelledby="수상 및 수료">
+      <h1>수상 및 수료</h1>
 
-    <footer>
-        <p>© 2025 고호찬. All rights reserved.</p>
-    </footer>
+      <article class="card awards">
+        <h3>디지털 신기술 교육과정 수료</h3>
+        <p><b>시간:</b> 160H · <b>주관:</b> 부산정보산업진흥원</p>
+        <p><b>설명:</b> 2024년 Python을 활용한 인공지능 학습 및 개발</p>
+        <img class="thumb" src="https://github.com/user-attachments/assets/d4f8914a-eb93-4552-b71d-65662e145808" alt="디지털 신기술 교육과정 인증서">
+      </article>
+
+      <article class="card awards">
+        <h3>Github 쇼케이스 경진대회</h3>
+        <p><b>주관:</b> 동서대학교 SW중심대학사업단</p>
+        <p><b>기간:</b> 2024-04-01 ~ 2024-11-11</p>
+        <p><b>설명:</b> GitHub 기반 프로젝트 관리</p>
+        <img class="thumb" src="https://github.com/user-attachments/assets/5122938a-cb8c-43f8-b529-80c1e60ec8dc" alt="Github 쇼케이스 인증서">
+        <p><a class="btn-link" href="https://github.com/user-attachments/files/18388991/Github.pdf" target="_blank" rel="noreferrer">PDF 다운로드</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>© 2025 고호찬. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
