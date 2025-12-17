@@ -1,0 +1,84 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+}
+.glass-card {
+  background: rgba(31, 41, 55, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(75, 85, 99, 0.4);
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ===== Gallery Grid Card ===== */
+.gallery-card {
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid rgba(75, 85, 99, 0.45);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.gallery-card .label {
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(75, 85, 99, 0.35);
+}
+
+/* 썸네일 영역(고정 높이) */
+.gallery-thumb {
+  height: 220px;               /* 필요하면 260px로 올려도 됨 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.25);
+}
+
+/* 🔑 핵심: 세로 사진 안 잘리게 */
+.gallery-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+/* ====== Scrollbar (Modal / Viewer) ====== */
+.viewer-scroll::-webkit-scrollbar,
+#gallery-modal .p-6::-webkit-scrollbar {
+  width: 10px;
+}
+
+.viewer-scroll::-webkit-scrollbar-track,
+#gallery-modal .p-6::-webkit-scrollbar-track {
+  background: rgba(17, 24, 39, 0.6);
+  border-radius: 999px;
+}
+
+.viewer-scroll::-webkit-scrollbar-thumb,
+#gallery-modal .p-6::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+  border: 2px solid rgba(17, 24, 39, 0.6);
+}
+
+.viewer-scroll::-webkit-scrollbar-thumb:hover,
+#gallery-modal .p-6::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.55);
+}
+
+/* Firefox */
+.viewer-scroll,
+#gallery-modal .p-6 {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.45) rgba(17, 24, 39, 0.6);
+}
