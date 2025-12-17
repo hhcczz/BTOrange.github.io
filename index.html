@@ -1,161 +1,577 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>고호찬 | 포트폴리오</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고호찬 | Game Developer Portfolio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#3b82f6',
+                            400: '#60a5fa',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <!-- 사이드(도킹 전엔 중앙) 탭 네비게이션 -->
-  <nav id="nav" aria-label="Primary">
-    <button class="nav-btn active" data-target="profile" aria-pressed="true">프로필</button>
-    <button class="nav-btn" data-target="projects" aria-pressed="false">프로젝트</button>
-    <button class="nav-btn" data-target="awards" aria-pressed="false">수상 및 수료</button>
-  </nav>
 
-  <!-- 메인 컨텐츠 -->
-  <main id="content">
-    <!-- 프로필(이력서 스타일) -->
-    <section id="profile" class="panel visible" aria-labelledby="프로필">
-      <header class="resume-header">
-        <div class="avatar">
-          <img src="https://raw.githubusercontent.com/hhcczz/BTOrange.github.io/refs/heads/main/MyImg.jpg" alt="프로필 사진">
+<body class="antialiased selection:bg-primary-500 selection:text-white">
+
+<!-- ================= NAV ================= -->
+<nav class="fixed w-full z-50 glass-card border-b border-gray-700">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <span class="text-xl font-bold text-primary-400">고호찬</span>
+        <div class="hidden md:flex gap-6 text-sm">
+            <a href="#home" class="hover:text-primary-400">Home</a>
+            <a href="#skills" class="hover:text-primary-400">Skills</a>
+            <a href="#projects" class="hover:text-primary-400">Projects</a>
+            <a href="#contact" class="hover:text-primary-400">Contact</a>
         </div>
-        <div>
-          <h1>고호찬</h1>
-          <p class="subtitle">게임/소프트웨어 개발자 · C / C# / Python</p>
-          <div class="meta">
-            <a href="mailto:qimin5012@naver.com">qimin5012@naver.com</a>
-            <span class="dot">•</span>
-            <a href="https://github.com/hhcczz" target="_blank" rel="noreferrer">github.com/hhcczz</a>
+    </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="min-h-screen flex items-center justify-center pt-16">
+    <div class="text-center max-w-3xl px-6">
+        <h2 class="text-primary-400 font-semibold uppercase mb-4">
+            Game Client & Backend Developer
+        </h2>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+            안녕하세요<br>
+        </h1>
+
+        <div class="h-20 flex items-center justify-center">
+            <p class="text-2xl md:text-4xl text-gray-300 font-light">
+                <span id="typing-text" class="typing-cursor"></span>
+            </p>
+        </div>
+
+        <p class="mt-8 text-xl text-gray-400 leading-relaxed">
+            게임을 플레이하며 느낀 아쉬움을 직접 개선하고,<br>
+            더 나은 경험을 만드는 개발자입니다.
+        </p>
+
+        <div class="mt-10 flex justify-center gap-4">
+    <a href="#projects"
+       class="px-8 py-3 rounded-md border border-gray-600 hover:bg-gray-800 text-gray-300">
+        View Projects
+    </a>
+
+    <a href="#contact"
+       class="px-8 py-3 rounded-md border border-gray-600 hover:bg-gray-800 text-gray-300">
+        Contact Me
+    </a>
+
+    <a href="https://docs.google.com/presentation/d/1jNJj3nLHhYvGGLoPsgg-cnALnfKnJwtE/edit?slide=id.p1#slide=id.p1"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="px-8 py-3 rounded-md border border-gray-600 hover:bg-gray-800 text-gray-300">
+        View Portfolio
+    </a>
+</div>
+    </div>
+</section>
+
+<!-- ================= SKILLS (유지) ================= -->
+<section id="skills" class="py-20 bg-gray-900 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">Tech Stacks</h2>
+            <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Languages -->
+            <div class="glass-card p-8 rounded-2xl hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Languages</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Python</span>
+                    <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">C#</span>
+                    <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">C++</span>
+                </div>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="glass-card p-8 rounded-2xl hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Frameworks & Engines</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Unity 2D</span>
+                    <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">React</span>
+                    <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Node.js</span>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="glass-card p-8 rounded-2xl hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Tools</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Git</span>
+                    <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">GitHub</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="py-20 bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16">Featured Projects</h2>
+
+      <div class="space-y-20">
+        <!-- Project : Gift Trip -->
+        <div class="glass-card p-10 rounded-2xl">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-2xl font-bold">AI 활용 개인 맞춤 여행 초안 생성 서비스</h3>
+            <span class="text-sm text-gray-400">Web</span>
+          </div>
+      
+          <!-- 기본 정보 -->
+          <p class="text-gray-300 mb-8 leading-relaxed">
+            <strong>설명:</strong> AI가 사용자 선호도를 분석해 여행 초안을 추천하는 서비스입니다.<br>
+            <strong>인원:</strong> 3인 개발<br>
+            <strong>언어/환경:</strong> React, NodeJS, Express<br>
+            <strong>개발 기간:</strong> 2025.09.03 ~ 2025.11.12
+          </p>
+      
+          <!-- STAR Method Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50">
+              <h4 class="text-lg font-semibold text-white mb-3 flex items-center">
+                <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                Problem (Challenge)
+              </h4>
+              <ol class="text-gray-400 text-sm leading-relaxed list-decimal list-inside space-y-2">
+                <li>
+                  LLM이 <strong>“영국에서 유명한 스시를 먹어보세요.”</strong>와 같이
+                  지역 맥락과 맞지 않는 정보를 생성하는 할루시네이션 문제가 발생했습니다.
+                </li>
+                <li>
+                  데이터 처리 구조 측면에서도 문제를 겪었습니다.
+                  여행 추천에 사용되는 <strong>사진 데이터의 메타정보(국가/카테고리/태그/설명 등)를 어떤 구조로 저장·관리할지</strong>가 
+                  명확하지 않았습니다.
+                </li>
+              </ol>
+            </div>
+        
+            <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50">
+              <h4 class="text-lg font-semibold text-white mb-3 flex items-center">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                How (Resolution)
+              </h4>
+              <ol class="text-gray-400 text-sm leading-relaxed list-decimal list-inside space-y-2">
+                <li>
+                  <strong>프롬프트 구조 재설계</strong>와
+                  <strong>모델 업그레이드</strong>를 통해 해결했습니다.
+                </li>
+                <li>
+                  사진 데이터 관리를 위해 <strong>제목-내용.확장자</strong> 형태의
+                  자체 메타데이터 규칙을 정의해 일관된 구조로 저장·처리했습니다.
+                  그 결과 데이터 분류와 조회 과정이 단순화되었고,
+                  실제 개발 일정에서도 약 <strong>5일 정도 기간을 단축</strong>할 수 있었습니다.
+                </li>
+              </ol>
+            </div>
+          </div>
+      
+          <!-- Retrospective -->
+          <div class="space-y-4 mb-8">
+            <div>
+              <h4 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-2">
+                Retrospective
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                <strong>[개인 의견]</strong><br>
+                3인 이상의 팀으로 개발한 경험이 처음이었기에,
+                초기에는 역할 분담과 개발 규칙을 정립하는 과정이 다소 낯설게 느껴졌습니다.
+                하지만 공통 규칙과 개발 흐름을 정립한 이후에는
+                개인 개발보다 높은 효율과 시간 절약 효과를 체감할 수 있었고,
+                팀원 간의 상호 자극을 통해 개발 동기 또한 크게 향상되었습니다.
+                이 경험을 통해 팀 기반 개발의 가치를 분명히 느끼게 되었으며,
+                이후에는 개인 개발보다는 팀 프로젝트 중심으로 경험을 쌓고자 하는 목표를 가지게 되었습니다.
+              </p>
+              
+              <p class="text-gray-400 text-sm leading-relaxed mt-4">
+                <strong>[아쉬웠던 점]</strong><br>
+                다만 아쉬운 점은 사용자 관점의 UX 디자인이 충분히 고려되지 못했다는 부분입니다.
+                개발자 3명으로 구성된 팀 특성상 시스템 흐름과 구현 중심의 설계에 치중한 결과,
+                전시회 당시 교수님으로부터 “사용자 입장에서의 직관성이 부족하다”는 피드백을 받았습니다.
+                이 피드백은 프로젝트 종료 이후까지도 깊이 남았으며,
+                이후 개발에서는 기능 구현뿐 아니라 UX 관점에서의 설계까지 함께 고려하는
+                개발자로 성장하고자 하는 계기가 되었습니다.
+              </p>
+            </div>
+          </div>
+      
+          <!-- 하단 버튼 영역 -->
+          <div class="flex items-center justify-between">
+            <a href="https://github.com/hhcczz/GiftTrip"
+               target="_blank"
+               class="text-sm text-primary-400 hover:underline">
+              GitHub Repository →
+            </a>
+            <div class="flex justify-end items-center gap-5 mt-4">
+              <button
+                class="open-gallery px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 hover:border-primary-500"
+                data-title="AI 활용 개인 맞춤 여행 초안 생성 서비스"
+                data-images="
+                  https://github.com/user-attachments/assets/929d781d-d928-4b29-a583-c396b60c7e87,
+                  https://github.com/user-attachments/assets/fd5992e6-35e6-420e-83c1-085ef8007ebc,
+                  https://github.com/user-attachments/assets/a152ed64-4b63-4656-bb10-77f99893b110,
+                  https://github.com/user-attachments/assets/79311119-adfa-4e51-a4d8-9b1a47534548,
+                  https://github.com/user-attachments/assets/7a7fc5db-d7d7-446c-94b9-83b06b4085c5,
+                  https://github.com/user-attachments/assets/f8ed36f6-f314-4045-9c7f-90ebf06b66a8,
+                  https://github.com/user-attachments/assets/49e7cc24-795a-48b7-a6dc-747827ea3e20,
+                  https://github.com/user-attachments/assets/9564d430-ee7b-472c-b565-73ffb0932fd6
+                  
+                ">
+                사진확인
+              </button>
+            </div>
           </div>
         </div>
-      </header>
-
-      <div class="resume-grid">
-        <section>
-          <h2>소개</h2>
-          <ul class="kv">
-            <li><span>이름</span><b>고호찬</b></li>
-            <li><span>나이</span><b>26</b></li>
-            <li><span>사용 언어</span><b>C, C#, Python</b></li>
-            <li><span>개발 이력</span><b>프로그램 1개 · 게임 3개</b></li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>스킬</h2>
-          <div class="chips">
-            <span>Unity 2D</span><span>C#</span><span>C</span>
-            <span>Python</span><span>Vanilla JS</span><span>HTML5/CSS3</span>
+        <!-- Project : 고양이 키우기 -->
+        <div class="glass-card p-10 rounded-2xl">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-2xl font-bold">고양이 키우기</h3>
+            <span class="text-sm text-gray-400">Unity 2D · Mobile Idle RPG</span>
           </div>
-        </section>
+      
+          <!-- 기본 정보 -->
+          <p class="text-gray-300 mb-8 leading-relaxed">
+            <strong>설명:</strong> 방치형 구조를 기반으로 고양이를 합성해 높은 등급의 고양이를 획득하는 모바일 게임<br>
+            <strong>인원:</strong> 1인 개발<br>
+            <strong>언어/환경:</strong> C#, Unity 2D<br>
+            <strong>개발 기간:</strong> 2025.08.03 ~ 2025.10.08
+          </p>
+      
+          <!-- STAR Method Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50">
+              <h4 class="text-lg font-semibold text-white mb-3 flex items-center">
+                <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                Problem (Challenge)
+              </h4>
+              <ol class="text-gray-400 text-sm leading-relaxed list-decimal list-inside space-y-2">
+                <li>
+                  중반에서 후반부로 넘어갈 때 <strong>콘텐츠 소모 속도</strong>를 조절하면
+                  정체 구간이 발생해 유저 이탈 문제가 발생했습니다.
+                </li>
+                <li>
+                  화면 크기에 따라 UI 깨짐 문제가 발생했으며,
+                  특히 <strong>Pad 형식의 기기</strong>에서 문제가 두드러졌습니다.
+                </li>
+                <li>
+                  고양이 리소스 부족으로 인해 캐릭터 다양성 확보에 한계가 발생하였습니다.
+                </li>
+              </ol>
+            </div>
+        
+            <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50">
+              <h4 class="text-lg font-semibold text-white mb-3 flex items-center">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                How (Resolution)
+              </h4>
+              <ol class="text-gray-400 text-sm leading-relaxed list-decimal list-inside space-y-2">
+                <li>
+                  단순 수치 성장 대신 <strong>합성 확률, 대박 시스템, 유물 강화</strong>를 도입해
+                  후반까지 이어질 수 있는 성장 사다리를 설계했습니다.
+                </li>
+                <li>
+                  기기의 <strong>물리적 화면 크기(DPI)</strong>를 기준으로 1차 판별하고,
+                  보조적으로 <strong>화면비</strong>를 적용해 안정성을 높였습니다.
+                </li>
+                <li>
+                  해당 문제는 고양이 리소스를 직접 제작하는 방식으로 해결했습니다.
+                  기존 고양이 캐릭터를 참고하되 그대로 사용하지 않고,
+                  이왕 그리는거 세상에 없는 고양이로 그려보았습니다.
+                  EX) 마왕 고양이, 요리사 고양이, 우주 비행사 고양이
+                </li>
+              </ol>
+            </div>
+          </div>
+      
+          <!-- Retrospective -->
+          <div class="space-y-4 mb-8">
+            <div>
+              <h4 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-2">
+                Retrospective
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                <strong>[개인 의견]</strong><br>
+                이전 작품인 <strong>나만의 작은 용사</strong>를 개발하며 느꼈던 문제점과 아쉬운 부분을
+                보완하고자 <strong>고양이 키우기</strong> 게임을 개발하게 되었습니다.
+                이번 프로젝트에서는 기획자나 다른 개발자가 제 작업을 보았을 때
+                커뮤니케이션이 원활하게 이루어질 수 있도록,
+                <strong>Header, Tooltip, Min/Max</strong> 값 등
+                코드와 기획 정보를 명확히 정의하는 데 중점을 두고 개발했습니다.
+                초기에는 작업량이 늘어나 번거롭게 느껴졌지만,
+                프로젝트가 진행될수록 <strong>구조 파악과 수정</strong>이 훨씬 수월해졌고,
+                결과적으로 유지보수 측면에서 큰 장점으로 작용했습니다.
+              </p>
+              
+              <p class="text-gray-400 text-sm leading-relaxed mt-4">
+                <strong>[아쉬웠던 점]</strong><br>
+                고양이 리소스 수량을 사전에 충분히 파악하지 못했던 점이 아쉬움으로 남았습니다.
+                9월달에 제작 완료를 목표로 데드라인을 설정했으나,
+                리소스 부족으로 인해 추가 제작이 필요해
+                결과적으로 약 <strong>1주일 정도 개발 일정이 연장</strong>되었습니다.
+              </p>
+            </div>
+          </div>
+      
+          <!-- 하단 버튼 영역 -->
+          <div class="flex items-center justify-between">
+            <a href="https://github.com/hhcczz/RasingACat"
+               target="_blank"
+               class="text-sm text-primary-400 hover:underline">
+              GitHub Repository →
+            </a>
+            <div class="flex justify-end items-center gap-5 mt-4">
+              <a
+                href="https://www.youtube.com/shorts/5yGMWK8CYLM"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 hover:border-primary-500 text-center"
+              >
+                영상확인
+              </a>
+              <button
+                class="open-gallery px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 hover:border-primary-500"
+                data-title="고양이 키우기"
+                data-images="
+                https://github.com/user-attachments/assets/2f922cca-b4cb-4c04-a72e-d9257dc5ccc4,
+                https://github.com/user-attachments/assets/bad416ce-a847-4cfd-a88f-bd73a723cc63,
+                https://github.com/user-attachments/assets/efd8f09f-f609-48d1-b431-94c53973866c,
+                https://github.com/user-attachments/assets/8e60512d-0eb8-4153-bbf1-a8084fce980f,
+                https://github.com/user-attachments/assets/8c6d9b98-44bc-42c7-a716-99e97a792c75,
+                https://github.com/user-attachments/assets/557bd3c4-07db-4916-82f2-aecef72fc3b2,
+                https://github.com/user-attachments/assets/22579a0d-4315-4512-b9ea-e51303ef086d,
+                https://github.com/user-attachments/assets/52eeaaae-36ba-4661-8e8d-9ada8b0d7d9c,
+                ">
+                사진확인
+              </button>
+            </div>
+          </div>
+        </div>
 
-        <section>
-          <h2>프로젝트 하이라이트</h2>
-          <ul class="list">
-            <li><b>나만의 용사 키우기</b> · Unity 2D · Android · 1인 개발</li>
-            <li><b>개구리 모험</b> · Unity 2D · Android · 점프 액션</li>
-            <li><b>국기 맞추기 게임</b> · HTML/CSS/JS · Web</li>
-            <li><b>주식 보고서 프로그램</b> · Python 3.12 · Windows</li>
-          </ul>
-        </section>
+        <!-- Project : 나만의 작은 용사 -->
+        <div class="glass-card p-10 rounded-2xl">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-2xl font-bold">나만의 작은 용사</h3>
+            <span class="text-sm text-gray-400">Unity 2D · Mobile Idle RPG</span>
+          </div>
+      
+          <!-- 기본 정보 -->
+          <p class="text-gray-300 mb-8 leading-relaxed">
+            <strong>설명:</strong> 방치형 구조로 용사를 키워 최종 보스인 마왕을 무찌르면 되는 게임<br>
+            <strong>인원:</strong> 1인 개발<br>
+            <strong>언어/환경:</strong> C#, Unity 2D<br>
+            <strong>개발 기간:</strong> 2024.02.01 ~ 2024.06.16
+          </p>
+      
+          <!-- STAR Method Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50">
+              <h4 class="text-lg font-semibold text-white mb-3 flex items-center">
+                <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                Problem (Challenge)
+              </h4>
+              <ol class="text-gray-400 text-sm leading-relaxed list-decimal list-inside space-y-2">
+                <li>
+                  각 난이도별 클리어 시 난이도 전환 및 스테이지 이동 시 표시 오류가 발생하는 문제가 있었습니다.
+                </li>
+              </ol>
+            </div>
+        
+            <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50">
+              <h4 class="text-lg font-semibold text-white mb-3 flex items-center">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                How (Resolution)
+              </h4>
+              <ol class="text-gray-400 text-sm leading-relaxed list-decimal list-inside space-y-2">
+                <li>
+                  저는 상태변수 기반 구조로 문제를 해결했습니다.맵 구성 자체가 2차원 구조이기 때문에 이를 활용해 PinInStage[][]와 MoveInStage[][]라는 두 개의 2차원 배열 상태변수를 설계했습니다.
+                  각 배열은 난이도–스테이지 조합의 상태를 정확하게 추적하며, 스테이지 이동·조회·난이도 전환 시 해당 배열의 상태값만 갱신하도록 만들었습니다.
+                </li>
+              </ol>
+            </div>
+          </div>
+      
+          <!-- Retrospective -->
+          <div class="space-y-4 mb-8">
+            <div>
+              <h4 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-2">
+                Retrospective
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                <strong>[개인 의견]</strong><br>
+                첫 방치형 RPG 게임을 개발하며 다양한 시행착오를 경험했습니다.
+                다수의 Prefab을 활용하는 과정에서,
+                데이터 구조를 사전에 얼마나 촘촘하게 설계하느냐에 따라
+                개발 중 발생하는 불편함이 크게 달라진다는 점을 체감했습니다.
+                또한 단순한 조작을 중심으로 한 Jump Action 게임보다
+                방치형 RPG가 시스템과 데이터 측면에서 훨씬 많은 작업량을 요구한다는 점도 알게 되었습니다.
+              </p>
 
-        <section>
-          <h2>연락처</h2>
-          <p>협업/문의는 이메일로 편하게 연락 주세요.</p>
-          <a class="btn-ghost" href="mailto:qimin5012@naver.com">이메일 보내기</a>
-        </section>
+              <p class="text-gray-400 text-sm leading-relaxed mt-4">
+                <strong>[아쉬웠던 점]</strong><br>
+                이번 프로젝트를 통해 게임 제작 자체에 대한 즐거움을 분명히 느낄 수 있었지만,
+                동시에 ‘잘 만든 게임’이라고 말하기에는 아직 부족하다는 한계도 인식하게 되었습니다.
+                이러한 경험을 바탕으로 다음 프로젝트에서는
+                보다 세밀한 기획과 구조 설계를 바탕으로 개발할 수 있는
+                <strong>기획과 구현을 함께 고려하는 개발자</strong>로 성장하고자 합니다.
+              </p>
+            </div>
+          </div>
+      
+          <!-- 하단 버튼 영역 -->
+          <div class="flex items-center justify-between">
+            <a href="https://github.com/hhcczz/Idle-Game"
+               target="_blank"
+               class="text-sm text-primary-400 hover:underline">
+              GitHub Repository →
+            </a>
+            <div class="flex justify-end items-center gap-5 mt-4">
+              <a
+                href="https://www.youtube.com/watch?v=_BroSnrOvzk"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 hover:border-primary-500 text-center"
+              >
+                영상확인
+              </a>
+              <button
+                class="open-gallery px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 hover:border-primary-500"
+                data-title="나만의 작은 용사"
+                data-images="
+                  https://github.com/hhcczz/Idle-Game/assets/101077489/84ceb5ed-053f-45bf-9dad-1d3dc638b050,
+                  https://github.com/hhcczz/Idle-Game/assets/101077489/f745a0d2-69ed-4770-8275-a5b22c4e103c,
+                  https://github.com/hhcczz/Idle-Game/assets/101077489/1fd88a07-4683-40ef-92b9-0208a55be075,
+                  https://github.com/hhcczz/Idle-Game/assets/101077489/3a589a00-d3ac-4fc3-afce-d7430ee658a8
+                ">
+                사진확인
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 프로젝트 -->
-    <section id="projects" class="panel" aria-labelledby="프로젝트">
-      <h1>프로젝트</h1>
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-20 bg-gray-900 text-center">
+    <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+    <a href="mailto:qimin0000@naver.com"
+       class="inline-block px-8 py-4 rounded-xl bg-gray-800 border border-gray-700 hover:border-primary-500">
+        qimin0000@naver.com
+    </a>
+</section>
 
-      <article class="card">
-        <h3>🛡️ 나만의 용사 키우기</h3>
-        <p><b>설명:</b> 용사를 성장시켜 최종 마왕을 물리치면 클리어되는 방치형 RPG.</p>
-        <p><b>언어/환경:</b> C# · Unity 2D · Mobile(Android) · 1인 개발</p>
-        <div class="gallery">
-          <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/84ceb5ed-053f-45bf-9dad-1d3dc638b050" alt="">
-          <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/f745a0d2-69ed-4770-8275-a5b22c4e103c" alt="">
-          <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/1fd88a07-4683-40ef-92b9-0208a55be075" alt="">
-          <img src="https://github.com/hhcczz/Idle-Game/assets/101077489/3a589a00-d3ac-4fc3-afce-d7430ee658a8" alt="">
-          <!--<img src="https://github.com/hhcczz/Idle-Game/assets/101077489/7aaf8433-ac93-4c27-8963-664944501fbd" alt=""> -->
+<footer class="py-8 bg-gray-900 text-center border-t border-gray-800">
+    <p class="text-gray-600 text-sm">© 2025 고호찬. All rights reserved.</p>
+</footer>
+
+<!-- ================= GALLERY MODAL ================= -->
+<div id="gallery-modal" class="fixed inset-0 z-[9999] hidden">
+  <!-- dim -->
+  <div id="gallery-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+
+  <!-- panel -->
+  <div class="relative mx-auto mt-24 w-[92%] max-w-5xl">
+    <div class="glass-card rounded-2xl overflow-hidden border border-gray-700">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-700">
+        <div>
+          <h3 id="gallery-title" class="text-lg font-bold text-white">프로젝트 이미지</h3>
+          <p class="text-sm text-gray-400">프로젝트 사진입니다.</p>
         </div>
-        <a class="btn-link" href="https://github.com/hhcczz/Idle-Game" target="_blank" rel="noreferrer">GitHub 보기</a>
-      </article>
 
-      <article class="card frog">
-        <h3>🍓 개구리 모험</h3>
-        <p><b>설명:</b> 다양한 개구리를 조작해 훔쳐간 과일을 되찾는 점프 액션.</p>
-        <p><b>언어/환경:</b> C# · Unity 2D · Mobile(Android) · 1인 개발</p>
-        <div class="gallery">
-          <img src="https://github.com/user-attachments/assets/03329ac3-e817-4511-abed-56c021b4a784" alt="">
-          <img src="https://github.com/user-attachments/assets/460d680c-6b66-4d04-a248-cd3210d8e568" alt="">
-          <img src="https://github.com/user-attachments/assets/e9e88da0-2866-4ea3-af74-d54de46ff4c4" alt="">
-          <img src="https://github.com/user-attachments/assets/692caa8e-17f8-41e4-8577-924703c8c64e" alt="">
-          <img src="https://github.com/user-attachments/assets/d9c9938d-c92e-4dad-8147-24b93c3405f4" alt="">
-          <img src="https://github.com/user-attachments/assets/c6a975a5-54ef-497f-abc1-2429817df373" alt="">
+        <button
+          id="gallery-close"
+          class="px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 text-gray-200 hover:bg-gray-700 transition">
+          닫기 ✕
+        </button>
+      </div>
+
+      <div class="p-6 max-h-[70vh] overflow-auto">
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ================= IMAGE VIEWER (LIGHTBOX) ================= -->
+<div id="image-viewer" class="fixed inset-0 z-[10000] hidden" aria-hidden="true">
+  <!-- dim -->
+  <div id="viewer-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+  <!-- content -->
+  <div class="relative mx-auto mt-10 w-[95%] max-w-6xl">
+    <div class="glass-card rounded-2xl border border-gray-700 overflow-hidden">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-gray-700">
+        <p class="text-sm text-gray-300">이미지 미리보기</p>
+
+        <!-- ✅ X 버튼 -->
+        <button
+          id="viewer-close"
+          class="px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 text-gray-200 hover:bg-gray-700 transition">
+          닫기 ✕
+        </button>
+      </div>
+
+      <div class="p-4 viewer-scroll max-h-[80vh] overflow-auto">
+        <div class="flex items-center justify-center">
+          <img
+            id="viewer-img"
+            src=""
+            alt="preview"
+            class="max-w-full h-auto object-contain rounded-xl"
+          />
         </div>
-        <a class="btn-link" href="https://github.com/hhcczz/JumpGame" target="_blank" rel="noreferrer">GitHub 보기</a>
-      </article>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ================= JS ================= -->
+<script src="js/typing.js"></script>
+<script src="js/gallery.js"></script>
 
-      <article class="card">
-        <h3>🌍 국기 맞추기 게임</h3>
-        <p><b>설명:</b> 난이도별 전 세계 국기를 맞히는 퀴즈 게임.</p>
-        <p><b>언어/환경:</b> HTML5 · CSS3 · JavaScript · Web</p>
-        <div class="gallery">
-          <img src="https://github.com/user-attachments/assets/4f8c9e31-a145-44cd-9467-5ccf6c0716b7" alt="">
-          <img src="https://github.com/user-attachments/assets/77ab811b-80ca-4486-bd91-d638c360accd" alt="">
-          <img src="https://github.com/user-attachments/assets/91be3e05-5eeb-469b-b883-a1a36c1410b3" alt="">
-        </div>
-        <a class="btn-link" href="https://github.com/hhcczz/WebHosting.github.io" target="_blank" rel="noreferrer">GitHub 보기</a>
-      </article>
-
-      <article class="card">
-        <h3>📈 주식 보고서 프로그램</h3>
-        <p><b>설명:</b> (개인) API로 받은 주식 데이터를 보고서 형태로 보여주는 Windows 앱.</p>
-        <p><b>환경:</b> Python 3.12.4 (Anaconda base) · Windows · 2인</p>
-        <div class="gallery">
-          <img src="https://github.com/user-attachments/assets/99f28e47-57e6-4058-9a39-bb0c340e547b" alt="">
-          <img src="https://github.com/user-attachments/assets/4727a4f6-02ae-4a4c-8856-f841bd449340" alt="">
-          <img src="https://github.com/user-attachments/assets/50c53025-0d83-4469-a92e-4c1261dfb794" alt="">
-        </div>
-        <a class="btn-link" href="https://github.com/hhcczz/StockReport" target="_blank" rel="noreferrer">GitHub 보기</a>
-      </article>
-    </section>
-
-    <!-- 수상 및 수료 -->
-    <section id="awards" class="panel" aria-labelledby="수상 및 수료">
-      <h1>수상 및 수료</h1>
-
-      <article class="card awards">
-        <h3>디지털 신기술 교육과정 수료</h3>
-        <p><b>시간:</b> 160H · <b>주관:</b> 부산정보산업진흥원</p>
-        <p><b>설명:</b> 2024년 Python을 활용한 인공지능 학습 및 개발</p>
-        <img class="thumb" src="https://github.com/user-attachments/assets/d4f8914a-eb93-4552-b71d-65662e145808" alt="디지털 신기술 교육과정 인증서">
-      </article>
-
-      <article class="card awards">
-        <h3>Github 쇼케이스 경진대회</h3>
-        <p><b>주관:</b> 동서대학교 SW중심대학사업단</p>
-        <p><b>기간:</b> 2024-04-01 ~ 2024-11-11</p>
-        <p><b>설명:</b> GitHub 기반 프로젝트 관리</p>
-        <img class="thumb" src="https://github.com/user-attachments/assets/5122938a-cb8c-43f8-b529-80c1e60ec8dc" alt="Github 쇼케이스 인증서">
-        <p><a class="btn-link" href="https://github.com/user-attachments/files/18388991/Github.pdf" target="_blank" rel="noreferrer">PDF 다운로드</a></p>
-      </article>
-    </section>
-  </main>
-
-  <footer id="footer">
-    <p>© 2025 고호찬. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
